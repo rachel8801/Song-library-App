@@ -1,0 +1,23 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root{
+	maxHeight: "-Infinity"; 
+	maxWidth: "-Infinity";
+	minHeight: "-Infinity";
+	minWidth: "-Infinity";
+	prefHeight: "500.0"; 
+	prefWidth: "500.0";
+}
+
+.title{
+	/*-fx-font-size: 40px;*/
+	/*-fx-fill: AQUA;*/
+}
+
+.text-field{
+	-fx-font-family: Helvetica;
+}
+
+#firstName{
+	-fx-background-color: yellow;
+}

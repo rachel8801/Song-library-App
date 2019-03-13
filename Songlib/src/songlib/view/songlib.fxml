@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--CS 213 Fall 2018 - Assignment 1, Song Library
+        Student1 Name Alex Silva  netid: ars366
+        Student2 Name: Hongping Lin netid: hl793
+        Grader Name: Govind-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="albumDisplay" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" stylesheets="/songlib/view/style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songlib.view.songlibController">
+
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox layoutX="21.0" layoutY="4.0" prefHeight="56.0" prefWidth="460.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Song List" wrappingWidth="123.09521484375">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+            <Button fx:id="addSong" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="ADD" textAlignment="CENTER">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="60.0" right="5.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="editSong" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="73.0" text="EDIT">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="deleteSong" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" text="DELETE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Text layoutX="41.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song" wrappingWidth="50.09521484375" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="99.576171875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="140.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" wrappingWidth="50.09521484375" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <HBox layoutX="21.0" layoutY="60.0" prefHeight="27.0" prefWidth="460.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <TextField fx:id="songName" alignment="CENTER" prefHeight="27.0" prefWidth="110.0" promptText="Enter Song Name">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <TextField fx:id="artist" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="110.0" promptText="Enter Artist Name">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <TextField fx:id="album" alignment="CENTER" layoutX="120.0" layoutY="10.0" prefHeight="27.0" prefWidth="100.0" promptText="Enter Album">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <TextField fx:id="year" alignment="CENTER" layoutX="230.0" layoutY="10.0" prefHeight="27.0" prefWidth="50.0" promptText="Year">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <Button fx:id="saveEdit" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Save" />
+            <!--<Text fx:id="albumDisplay" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER" wrappingWidth="116.65966796875" text="STUFF">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>-->
+            <Button fx:id="cancelOperation" mnemonicParsing="false" prefHeight="8.0" prefWidth="45.0" text="CXL" />
+            <!--  <Button mnemonicParsing="false" text="Delete" />
+            <Button layoutX="350.0" layoutY="10.0" mnemonicParsing="false" text="Edit" />-->
+         </children>
+      </HBox>
+      <SplitPane layoutX="30.0" layoutY="133.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="460.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="123.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="(Required)" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="(Required)" />
+                  <ListView fx:id="listView" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="325.0" prefWidth="280.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <AnchorPane layoutX="291.0" minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="160.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="107.09521484375" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" AnchorPane.topAnchor="60.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:" AnchorPane.topAnchor="110.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Album:" AnchorPane.topAnchor="160.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year:" AnchorPane.topAnchor="210.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="songNameDisplay" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.99999760091305" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="60.0" />
+                        <Text fx:id="artistDisplay" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.99999760091305" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="110.0" />
+                        <Text fx:id="albumDisplay" layoutX="59.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="99.99999403953552" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="160.0" />
+                        <Text fx:id="yearDisplay" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="99.99999403953552" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="210.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Text layoutX="47.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(required)" />
+      <Text layoutX="154.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(required)" />
+   </children>
+</AnchorPane>
